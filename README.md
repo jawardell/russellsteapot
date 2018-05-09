@@ -1,6 +1,6 @@
 [![banner](https://mypages.valdosta.edu/jawardell/banner.png "banner")](https://github.com/jawardell/jsfun/blob/master/threesimple/textures/banner.png "banner")
 # Finding Teapots
-Russell has misplaced his teapot in deep space. Will you help him find it again? 
+Russell lost his teapot in deep space. Will you help him find it again? 
 <br><br>
 ## Start Finding on Ubuntu
 install git<br>
