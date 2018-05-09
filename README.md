@@ -3,6 +3,9 @@
 Russell has misplaced his teapot in deep space. Will you help him find it again? 
 <br><br>
 ## Start Finding on Ubuntu
+install git<br>
+`$ sudo apt-get install git`<br><br>
+
 install node js<br>
 `$ sudo apt-get install nodejs`<br><br>
 
