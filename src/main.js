@@ -268,6 +268,7 @@ window.onload = function() {
 
 	}, false);
 
+
 	//decides if user has found teapot
 	function hasTeapot() {
 		let xdiff = Math.abs(camera.position.x - teapot.position.x);
