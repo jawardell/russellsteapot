@@ -2,7 +2,7 @@
 # Finding Teapots
 Russell lost his teapot in deep space. Will you help him find it again? 
 <br><br>
-## Start Finding Locally on Ubuntu
+## Start Finding on Ubuntu
 install git<br>
 `$ sudo apt-get install git`<br><br>
 
