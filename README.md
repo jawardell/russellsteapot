@@ -2,7 +2,7 @@
 # Finding Teapots
 Russell lost his teapot in deep space. Will you help him find it again? 
 <br><br>
-## Start Finding on Ubuntu Locally
+## Start Finding Locally on Ubuntu
 install git<br>
 `$ sudo apt-get install git`<br><br>
 
@@ -34,6 +34,7 @@ Begin your mission!<br><br>
 
 ## Application Demo Link
 Try using [Chromium](https://www.chromium.org)!<br> 
+Results may vary per device.
 <br>[Demo Link](https://jawardellteapot.herokuapp.com) <br><br>
 ### Resources
 [Russell's Teapot](https://www.youtube.com/watch?v=scC7gY227Cc&t=0m26s "Russell's Teapot")<br>
