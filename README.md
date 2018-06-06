@@ -33,7 +33,7 @@ navigate to the server in your Chrome browser<br>
 Begin your mission!<br><br>
 
 ## Application Demo Link
-Best results with Chromium browser. 
+Try using [Chromium](https://www.chromium.org)!<br> 
 <br>[Demo Link](https://jawardellteapot.herokuapp.com) <br><br>
 ### Resources
 [Russell's Teapot](https://www.youtube.com/watch?v=scC7gY227Cc&t=0m26s "Russell's Teapot")<br>
