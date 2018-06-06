@@ -1,7 +1,7 @@
 waiting();
 
 window.onload = function() {
-	var camera, 
+	let camera, 
 		scene,
 		renderer, 
 		cameraLookAt, 
@@ -30,10 +30,10 @@ window.onload = function() {
 		})();
 
 		//initialize three.js scene
-		var container = document.createElement( 'div' );
+		let container = document.createElement( 'div' );
     		document.body.appendChild( container );
-    		var width = window.innerWidth-30;
-    		var height = window.innerHeight-40;
+    		let width = window.innerWidth-30;
+    		let height = window.innerHeight-40;
     		camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 80000 );
     		camera.position.set( -600, 550, 1300 );
     		renderer = new THREE.WebGLRenderer();
@@ -57,11 +57,11 @@ window.onload = function() {
 
 
 	//draw planets
-	var NUMPLANETS = 500 , planets = [];
+	let NUMPLANETS = 500 , planets = [];
 	(function() {
-		for(var i = 0; i < NUMPLANETS; i++) {
-			var geometry = new THREE.SphereGeometry( 10*Math.random(), 200, 5 );
-			var material = new THREE.MeshLambertMaterial( { color: 0xffffff / Math.random() } );
+		for(let i = 0; i < NUMPLANETS; i++) {
+			let geometry = new THREE.SphereGeometry( 10*Math.random(), 200, 5 );
+			let material = new THREE.MeshLambertMaterial( { color: 0xffffff / Math.random() } );
 			planets[i] = new THREE.Mesh( geometry, material );
 			planets[i].position.x = (i % 2 == 0) ? rand() : -rand();
 			planets[i].position.y = (i % 3 == 0) ? rand() : -rand();
@@ -73,17 +73,17 @@ window.onload = function() {
 
 	//place stars
 	(function () {
-		var starQty = 2000;
-		var geometry = new THREE.SphereGeometry(100000, 100, 50);
+		let starQty = 2000;
+		let geometry = new THREE.SphereGeometry(100000, 100, 50);
 
-	    	var materialOptions = {
+	    	let materialOptions = {
 	    		size: 1.0, 
 	    		opacity: 0.7
 	    	};
 
-	    	var cloudMaterial = new THREE.PointCloudMaterial(materialOptions);
-		for (var i = 0; i < starQty; i++) {
-			var starVertex = new THREE.Vector3();
+	    	let cloudMaterial = new THREE.PointCloudMaterial(materialOptions);
+		for (let i = 0; i < starQty; i++) {
+			let starVertex = new THREE.Vector3();
 			starVertex.x = (i % 2 == 0) ? rand() : -rand();
 			starVertex.y = (i % 5 == 0) ? rand() : -rand();
 			starVertex.z = (i % 3 == 0) ? rand() : -rand();
@@ -95,81 +95,81 @@ window.onload = function() {
 
 
 	//render and place teapot in random location
-	var teapot;
+	let teapot;
 	(function() {	
-		var teapotGeometry = new THREE.TeapotBufferGeometry( 30, 15, true, true, true, true, true, true); 
-		var teapotMaterial = new THREE.MeshLambertMaterial({color: 0xffffff / Math.random()});
+		let teapotGeometry = new THREE.TeapotBufferGeometry( 30, 15, true, true, true, true, true, true); 
+		let teapotMaterial = new THREE.MeshLambertMaterial({color: 0xffffff / Math.random()});
     		teapot = new THREE.Mesh(teapotGeometry, teapotMaterial);
 		teapot.position.x = rand();
 		teapot.position.y = rand();
 		teapot.position.z = rand();
     		scene.add( teapot );
 
-		var tlight1 = new THREE.PointLight({color: 0xffffff}, .5);
+		let tlight1 = new THREE.PointLight({color: 0xffffff}, .5);
 		tlight1.position.set(teapot.position.x, teapot.position.y+52, teapot.position.z);
 		scene.add(tlight1);
 
-		var tlight2 = new THREE.PointLight({color: 0xffffff}, .5);
+		let tlight2 = new THREE.PointLight({color: 0xffffff}, .5);
 		tlight2.position.set(teapot.position.x-52, teapot.position.y, teapot.position.z);
 		scene.add(tlight2);
 
 
-		var tlight3 = new THREE.PointLight({color: 0xffffff}, .5);
+		let tlight3 = new THREE.PointLight({color: 0xffffff}, .5);
 		tlight3.position.set(teapot.position.x+52, teapot.position.y, teapot.position.z);
 		scene.add(tlight3);
 
-		var tlight4 = new THREE.PointLight({color: 0xffffff}, .5);
+		let tlight4 = new THREE.PointLight({color: 0xffffff}, .5);
 		tlight4.position.set(teapot.position.x, teapot.position.y, teapot.position.z+52);
 		scene.add(tlight4);
 
-		var tlight5 = new THREE.PointLight({color: 0xffffff}, .5);
+		let tlight5 = new THREE.PointLight({color: 0xffffff}, .5);
 		tlight5.position.set(teapot.position.x, teapot.position.y-52, teapot.position.z);
 		scene.add(tlight5);
 	})();
 
 
 	//load textured objects
-	var moon, io, earth, planetx, planety;
+	let moon, io, earth, planetx, planety;
 	(function() {
-		var moonGeometry = new THREE.SphereGeometry(20, 32, 32)
-		var moonTexture = new THREE.TextureLoader().load('/textures/moon.jpg');
-		var moonMaterial = new THREE.MeshLambertMaterial({map: moonTexture});
+		let moonGeometry = new THREE.SphereGeometry(20, 32, 32)
+		let moonTexture = new THREE.TextureLoader().load('/textures/moon.jpg');
+		let moonMaterial = new THREE.MeshLambertMaterial({map: moonTexture});
 		moon = new THREE.Mesh(moonGeometry, moonMaterial);
 		moon.position.x = rand();
 		moon.position.y = rand();
 		moon.position.z = rand();
 		scene.add(moon);
 
-		var earthGeometry = new THREE.SphereGeometry(50, 32, 32)
-		var earthTexture = new THREE.TextureLoader().load('/textures/earth.jpg');
-		var earthMaterial = new THREE.MeshLambertMaterial({map: earthTexture});
+		let earthGeometry = new THREE.SphereGeometry(50, 32, 32)
+		let earthTexture = new THREE.TextureLoader().load('/textures/earth.jpg');
+		let earthMaterial = new THREE.MeshLambertMaterial({map: earthTexture});
 		earth = new THREE.Mesh(earthGeometry, earthMaterial);
 		earth.position.x = rand();
 		earth.position.y = rand();
 		earth.position.z = rand();
 		scene.add(earth);
 
-		var ioGeometry = new THREE.SphereGeometry(13, 32, 32)
-		var ioTexture = new THREE.TextureLoader().load('/textures/io.jpg');
-		var ioMaterial = new THREE.MeshLambertMaterial({map: ioTexture});
+		let ioGeometry = new THREE.SphereGeometry(13, 32, 32)
+		let ioTexture = new THREE.TextureLoader().load('/textures/io.jpg');
+		let ioMaterial = new THREE.MeshLambertMaterial({map: ioTexture});
 		io = new THREE.Mesh(ioGeometry, ioMaterial);
 		io.position.x = rand();
 		io.position.y = rand();
 		io.position.z = rand();
 		scene.add(io);
 
-		var planetyGeometry = new THREE.SphereGeometry(37, 32, 32)
-		var planetyTexture = new THREE.TextureLoader().load('/textures/planety.png');
-		var planetyMaterial = new THREE.MeshLambertMaterial({map: planetyTexture});
+		let planetyGeometry = new THREE.SphereGeometry(37, 32, 32)
+		let planetyTexture = new THREE.TextureLoader().load('/textures/planety.png');
+		let planetyMaterial = new THREE.MeshLambertMaterial({map: planetyTexture});
 		planety = new THREE.Mesh(planetyGeometry, planetyMaterial);
 		planety.position.x = rand();
 		planety.position.y = rand();
 		planety.position.z = rand();
 		scene.add(planety);
 
-		var planetxGeometry = new THREE.SphereGeometry(60, 32, 32)
-		var planetxTexture = new THREE.TextureLoader().load('/textures/planetx.png');
-		var planetxMaterial = new THREE.MeshLambertMaterial({map: planetxTexture});
+		let planetxGeometry = new THREE.SphereGeometry(60, 32, 32)
+		let planetxTexture = new THREE.TextureLoader().load('/textures/planetx.png');
+		let planetxMaterial = new THREE.MeshLambertMaterial({map: planetxTexture});
 		planetx = new THREE.Mesh(planetxGeometry, planetxMaterial);
 		planetx.position.x = rand();
 		planetx.position.y = rand();
@@ -246,7 +246,7 @@ window.onload = function() {
 	}, false);
 	
 	//handle mouse movements
-	var firstmove = true;
+	let firstmove = true;
 	document.addEventListener('mousemove', function() {
 		if(firstmove) {
 			oldmousepos.x = event.clientX;
@@ -255,8 +255,8 @@ window.onload = function() {
 			return;
 		}
 
-		var deltayaw =  (oldmousepos.x - event.clientX) / 500.0;
-		var deltapitch =  (oldmousepos.y - event.clientY) / 500.0;
+		let deltayaw =  (oldmousepos.x - event.clientX) / 500.0;
+		let deltapitch =  (oldmousepos.y - event.clientY) / 500.0;
 
 		cameraLookAt.applyAxisAngle(new THREE.Vector3(0,1,0), deltayaw);
 		cameraRight.applyAxisAngle(new THREE.Vector3(0,1,0), deltayaw);
@@ -270,9 +270,9 @@ window.onload = function() {
 
 	//decides if user has found teapot
 	function hasTeapot() {
-		var xdiff = Math.abs(camera.position.x - teapot.position.x);
-		var ydiff = Math.abs(camera.position.y - teapot.position.y);
-		var zdiff = Math.abs(camera.position.z - teapot.position.z);
+		let xdiff = Math.abs(camera.position.x - teapot.position.x);
+		let ydiff = Math.abs(camera.position.y - teapot.position.y);
+		let zdiff = Math.abs(camera.position.z - teapot.position.z);
 		if((xdiff > 300) || (ydiff > 300) || (zdiff > 300)) {
 			return false;
 		}
@@ -281,7 +281,7 @@ window.onload = function() {
 	}
 	
 	camera.lookAt(planets[499]);
-	var render, newlookat; 
+	let render, newlookat; 
 	(render = function() {
 		stats.begin();
 
@@ -319,14 +319,14 @@ window.onload = function() {
 
 function waiting() {
 	if(!(document.readyState === "complete")) {
-		var msg = "<br><br><br>losing Russell's teapot..";
+		let msg = "<br><br><br>losing Russell's teapot..";
 		document.getElementById("msg").innerHTML = msg;
 	}
 }
 
 function msg() {
 	document.getElementById("msg").innerHTML = "teapots found: 0";
-	var msg = "Russell misplaced his teapot in deep space.\n";
+	let msg = "Russell misplaced his teapot in deep space.\n";
 	msg += "Objective: Locate all teapots.\n";
 	msg += "Controls: WASD , Arrow Keys, Mouse\n";
 	msg += "Speed: increase - Q, decrease - E, reset - R\n";
