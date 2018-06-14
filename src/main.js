@@ -131,45 +131,45 @@ window.onload = function() {
 	//load textured objects
 	let moon, io, earth, planetx, planety;
 	(function() {
-		let moonGeometry = new THREE.SphereGeometry(20, 32, 32)
-		let moonTexture = new THREE.TextureLoader().load('/textures/moon.jpg');
-		let moonMaterial = new THREE.MeshLambertMaterial({map: moonTexture});
+		let geometry = new THREE.SphereGeometry(20, 32, 32)
+		let texture = new THREE.TextureLoader().load('/textures/moon.jpg');
+		let material = new THREE.MeshLambertMaterial({map: moonTexture});
 		moon = new THREE.Mesh(moonGeometry, moonMaterial);
 		moon.position.x = rand();
 		moon.position.y = rand();
 		moon.position.z = rand();
 		scene.add(moon);
 
-		let earthGeometry = new THREE.SphereGeometry(50, 32, 32)
-		let earthTexture = new THREE.TextureLoader().load('/textures/earth.jpg');
-		let earthMaterial = new THREE.MeshLambertMaterial({map: earthTexture});
+		geometry = new THREE.SphereGeometry(50, 32, 32)
+		texture = new THREE.TextureLoader().load('/textures/earth.jpg');
+		material = new THREE.MeshLambertMaterial({map: earthTexture});
 		earth = new THREE.Mesh(earthGeometry, earthMaterial);
 		earth.position.x = rand();
 		earth.position.y = rand();
 		earth.position.z = rand();
 		scene.add(earth);
 
-		let ioGeometry = new THREE.SphereGeometry(13, 32, 32)
-		let ioTexture = new THREE.TextureLoader().load('/textures/io.jpg');
-		let ioMaterial = new THREE.MeshLambertMaterial({map: ioTexture});
+		geometry = new THREE.SphereGeometry(13, 32, 32)
+		texture = new THREE.TextureLoader().load('/textures/io.jpg');
+		material = new THREE.MeshLambertMaterial({map: ioTexture});
 		io = new THREE.Mesh(ioGeometry, ioMaterial);
 		io.position.x = rand();
 		io.position.y = rand();
 		io.position.z = rand();
 		scene.add(io);
 
-		let planetyGeometry = new THREE.SphereGeometry(37, 32, 32)
-		let planetyTexture = new THREE.TextureLoader().load('/textures/planety.png');
-		let planetyMaterial = new THREE.MeshLambertMaterial({map: planetyTexture});
+		geometry = new THREE.SphereGeometry(37, 32, 32)
+		texture = new THREE.TextureLoader().load('/textures/planety.png');
+		material = new THREE.MeshLambertMaterial({map: planetyTexture});
 		planety = new THREE.Mesh(planetyGeometry, planetyMaterial);
 		planety.position.x = rand();
 		planety.position.y = rand();
 		planety.position.z = rand();
 		scene.add(planety);
 
-		let planetxGeometry = new THREE.SphereGeometry(60, 32, 32)
-		let planetxTexture = new THREE.TextureLoader().load('/textures/planetx.png');
-		let planetxMaterial = new THREE.MeshLambertMaterial({map: planetxTexture});
+		geometry = new THREE.SphereGeometry(60, 32, 32)
+		texture = new THREE.TextureLoader().load('/textures/planetx.png');
+		material = new THREE.MeshLambertMaterial({map: planetxTexture});
 		planetx = new THREE.Mesh(planetxGeometry, planetxMaterial);
 		planetx.position.x = rand();
 		planetx.position.y = rand();
@@ -291,7 +291,7 @@ window.onload = function() {
 			document.getElementById("msg").innerHTML = "teapots found: " + numfound;
 			teapot.position.x = rand();
 			teapot.position.y = rand();
-			teapot.position.y = rand();
+			teapot.position.z = rand();
 		}
 
 		//update camera information
