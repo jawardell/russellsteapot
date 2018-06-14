@@ -133,8 +133,8 @@ window.onload = function() {
 	(function() {
 		let geometry = new THREE.SphereGeometry(20, 32, 32)
 		let texture = new THREE.TextureLoader().load('/textures/moon.jpg');
-		let material = new THREE.MeshLambertMaterial({map: moonTexture});
-		moon = new THREE.Mesh(moonGeometry, moonMaterial);
+		let material = new THREE.MeshLambertMaterial({map: texture});
+		moon = new THREE.Mesh(geometry, material);
 		moon.position.x = rand();
 		moon.position.y = rand();
 		moon.position.z = rand();
@@ -142,8 +142,8 @@ window.onload = function() {
 
 		geometry = new THREE.SphereGeometry(50, 32, 32)
 		texture = new THREE.TextureLoader().load('/textures/earth.jpg');
-		material = new THREE.MeshLambertMaterial({map: earthTexture});
-		earth = new THREE.Mesh(earthGeometry, earthMaterial);
+		material = new THREE.MeshLambertMaterial({map: texture});
+		earth = new THREE.Mesh(geometry, material);
 		earth.position.x = rand();
 		earth.position.y = rand();
 		earth.position.z = rand();
@@ -151,8 +151,8 @@ window.onload = function() {
 
 		geometry = new THREE.SphereGeometry(13, 32, 32)
 		texture = new THREE.TextureLoader().load('/textures/io.jpg');
-		material = new THREE.MeshLambertMaterial({map: ioTexture});
-		io = new THREE.Mesh(ioGeometry, ioMaterial);
+		material = new THREE.MeshLambertMaterial({map: texture});
+		io = new THREE.Mesh(geometry, material);
 		io.position.x = rand();
 		io.position.y = rand();
 		io.position.z = rand();
@@ -160,8 +160,8 @@ window.onload = function() {
 
 		geometry = new THREE.SphereGeometry(37, 32, 32)
 		texture = new THREE.TextureLoader().load('/textures/planety.png');
-		material = new THREE.MeshLambertMaterial({map: planetyTexture});
-		planety = new THREE.Mesh(planetyGeometry, planetyMaterial);
+		material = new THREE.MeshLambertMaterial({map: texture});
+		planety = new THREE.Mesh(geometry, material);
 		planety.position.x = rand();
 		planety.position.y = rand();
 		planety.position.z = rand();
@@ -169,8 +169,8 @@ window.onload = function() {
 
 		geometry = new THREE.SphereGeometry(60, 32, 32)
 		texture = new THREE.TextureLoader().load('/textures/planetx.png');
-		material = new THREE.MeshLambertMaterial({map: planetxTexture});
-		planetx = new THREE.Mesh(planetxGeometry, planetxMaterial);
+		material = new THREE.MeshLambertMaterial({map: texture});
+		planetx = new THREE.Mesh(geometry, material);
 		planetx.position.x = rand();
 		planetx.position.y = rand();
 		planetx.position.z = rand();
