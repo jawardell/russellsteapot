@@ -1,4 +1,4 @@
-[![banner](https://mypages.valdosta.edu/old/jawardell/banner.png "banner")](https://github.com/jawardell/jsfun/blob/master/threesimple/textures/banner.png "banner")
+[![banner](https://mypages.valdosta.edu/old/banner.png "banner")](https://github.com/jawardell/jsfun/blob/master/threesimple/textures/banner.png "banner")
 # Finding Teapots
 Russell lost his teapot in deep space. Will you help him find it again? 
 <br><br>
